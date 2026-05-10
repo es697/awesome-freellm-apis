@@ -148,48 +148,15 @@ Data from freellm.net, updated daily via API monitoring.
 
 ```
 awesome-free-llm-apis/
-├── README.md              ← You are here
+├── README.md              ← Complete provider directory & code examples
 ├── code-examples/          ← Ready-to-use config snippets
 │   ├── claude-code.md
 │   ├── cursor.md
 │   └── codex.md
-├── data/
-│   └── models.json         ← Full structured dataset (453 models, updated daily)
 └── LICENSE                 ← MIT
 ```
 
-### Using the Data
-
-The `data/models.json` file contains structured metadata for every model:
-
-```json
-{
-  "id": "google-gemini-2.5-flash",
-  "name": "Gemini 2.5 Flash",
-  "provider": "Google",
-  "contextWindow": 1048576,
-  "maxOutput": 65536,
-  "modality": ["text", "image", "audio"],
-  "rateLimit": "2-15 RPM, 1,500 RPD",
-  "baseUrl": "https://generativelanguage.googleapis.com/v1beta",
-  "openaiCompatible": false,
-  "noCreditCard": true,
-  "free": true,
-  "bestFor": ["coding", "chat", "vision", "reasoning"],
-  "status": "online"
-}
-```
-
-Read it in Python:
-
-```python
-import json
-with open('data/models.json') as f:
-    models = json.load(f)
-
-free_models = [m for m in models if m['free']]
-no_card = [m for m in free_models if m['noCreditCard']]
-```
+> For the full structured dataset with 453 models and daily updates, visit **[freellm.net](https://freellm.net)**.
 
 ---
 
@@ -197,7 +164,7 @@ no_card = [m for m in free_models if m['noCreditCard']]
 
 We welcome contributions!
 
-- **Add a missing free model** — Open an [issue](https://github.com/open-free-llm-api/awesome-free-llm-apis/issues) or submit a PR updating `data/models.json`
+- **Add a missing free model** — Open an [issue](https://github.com/open-free-llm-api/awesome-free-llm-apis/issues) or submit a PR
 - **Fix inaccurate data** — Rate limits change, providers graduate. PRs welcome
 - **Add a config snippet** — Have a working config for a tool we don't cover? Add it to `code-examples/`
 
